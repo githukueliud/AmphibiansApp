@@ -3,4 +3,5 @@
     <string name="loading_failed">Error occurred</string>
     <string name="success_text">Success</string>
     <string name="loading">Loading...</string>
+    <string name="retry">retry</string>
 </resources>
