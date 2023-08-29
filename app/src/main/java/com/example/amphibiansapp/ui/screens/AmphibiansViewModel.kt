@@ -31,6 +31,11 @@ class AmphibiansViewModel(
     var amphibiansUiState: AmphibiansUiState by mutableStateOf(AmphibiansUiState.Loading)
         private set
 
+    //calling the getPhotos in the init so that we can get the the ui status immediately
+    init {
+        getPhotos()
+    }
+
     //get the information from the Amphibians Api retrofit service
     fun getPhotos() {
         viewModelScope.launch {
