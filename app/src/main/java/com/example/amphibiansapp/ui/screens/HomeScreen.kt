@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -74,7 +75,8 @@ fun AmphibianCardList(photos: List<AmphibiansPhoto>, modifier: Modifier = Modifi
 @Composable
 fun SingleAmphibianCard(photo: AmphibiansPhoto ,modifier: Modifier = Modifier) {
     Card(
-        modifier = Modifier.padding(10.dp)
+        modifier = Modifier
+            .padding(10.dp)
             .height(460.dp),
         shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
@@ -83,17 +85,15 @@ fun SingleAmphibianCard(photo: AmphibiansPhoto ,modifier: Modifier = Modifier) {
            horizontalAlignment = Alignment.CenterHorizontally,
 
        ) {
-           Text(
-               text = photo.name,
-               modifier = Modifier
-                   .fillMaxWidth()
-                   .padding(10.dp),
-               style = MaterialTheme.typography.titleLarge,
-               fontWeight = FontWeight.Bold,
-               textAlign = TextAlign.Start
-           )
-
-
+               Text(
+                   text = photo.name,
+                   modifier = Modifier
+                       .fillMaxWidth()
+                       .padding(10.dp),
+                   style = MaterialTheme.typography.titleLarge,
+                   fontWeight = FontWeight.Bold,
+                   textAlign = TextAlign.Start
+               )
            AsyncImage(
                modifier = Modifier.fillMaxWidth(),
                model = ImageRequest.Builder(context = LocalContext.current)
